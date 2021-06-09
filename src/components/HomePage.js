@@ -11,7 +11,7 @@ export default function HomePage() {
     .then(({data})=>{
       setPosts(data);
     })
-    .catch((err)=>{
+    .catch(err=>{
       alert("erro: "+err.response.status);
     });
   }, []);
