@@ -30,8 +30,10 @@ export default function PostShowPage() {
   }
 
   function onDeleteButtonClick() {
-    alert('No futuro, ao clicar neste botão o post vai ser excluído de verdade :)');
-    history.push('/');
+    axios
+    .delete(`http://localhost:4000/posts/${postId}`)
+    .then(() => history.push('/'))
+    .catch(err => alert("erro: "+err.response.status));
   }
 
   if (!post) return <Spinner />;
