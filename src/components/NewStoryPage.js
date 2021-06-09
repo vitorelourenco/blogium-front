@@ -18,7 +18,8 @@ export default function NewStoryPage() {
       content
     }
     axios
-    .post("http://localhost:4000", body)
+    .post("http://localhost:4000/posts", body)
+    .then(()=>history.push("/"))
     .catch(err => alert("erro: "+err.response.status))
     .finally(()=>{
       setSaveButtonDisable(false)
